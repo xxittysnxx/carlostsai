@@ -705,6 +705,14 @@ body::after {
     padding-left: 1rem;
     background: linear-gradient(90deg, rgba(255, 0, 60, 0.1), transparent);
     clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
+    word-wrap: break-word;
+    /* Legacy support */
+    overflow-wrap: break-word;
+    /* Standard */
+    word-break: normal;
+    /* Don't break words arbitrarily */
+    hyphens: manual;
+    max-width: 100%;
 }
 
 .subsection-title {

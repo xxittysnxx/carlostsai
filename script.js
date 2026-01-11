@@ -1,5 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- Clean URL Visual Hack (Remove trailing slash) ---
+    if (window.location.pathname.length > 1 && window.location.pathname.endsWith('/')) {
+        const newPath = window.location.pathname.slice(0, -1);
+        const newState = window.history.state;
+        // visual only replacement
+        window.history.replaceState(newState, '', newPath + window.location.search + window.location.hash);
+    }
+
     // --- Terminal Typing Animation ---
     const terminalBody = document.querySelector('.terminal-body');
     if (terminalBody) {
